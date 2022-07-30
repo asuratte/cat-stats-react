@@ -3,6 +3,7 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import { CheckLg } from 'react-bootstrap-icons';
 import { XLg } from 'react-bootstrap-icons';
+import { BoxArrowUpRight } from 'react-bootstrap-icons';
 
 const BreedCard = () => {
 
@@ -82,7 +83,55 @@ const BreedCard = () => {
                                     : <span className="attribute-icon no"><XLg /></span>
                                 }
                              Lap Cat</li>
+                             <li>
+                                {
+                                    (breedsList[currentBreedNumber].rare)
+                                    ? <span className="attribute-icon yes"><CheckLg /></span>
+                                    : <span className="attribute-icon no"><XLg /></span>
+                                }
+                             Rare</li>
+                             <li>
+                                {
+                                    (breedsList[currentBreedNumber].suppressed_tail)
+                                    ? <span className="attribute-icon yes"><CheckLg /></span>
+                                    : <span className="attribute-icon no"><XLg /></span>
+                                }
+                             Suppressed Tail</li>
+                             <li>
+                                {
+                                    (breedsList[currentBreedNumber].short_legs)
+                                    ? <span className="attribute-icon yes"><CheckLg /></span>
+                                    : <span className="attribute-icon no"><XLg /></span>
+                                }
+                             Short Legs</li>
+                             <li>
+                                {
+                                    (breedsList[currentBreedNumber].hypoallergenic)
+                                    ? <span className="attribute-icon yes"><CheckLg /></span>
+                                    : <span className="attribute-icon no"><XLg /></span>
+                                }
+                             Hypoallergenic</li>
+                             <li>
+                                {
+                                    (breedsList[currentBreedNumber].experimental)
+                                    ? <span className="attribute-icon yes"><CheckLg /></span>
+                                    : <span className="attribute-icon no"><XLg /></span>
+                                }
+                             Experimental</li>
+                             <li>
+                                {
+                                    (breedsList[currentBreedNumber].natural)
+                                    ? <span className="attribute-icon yes"><CheckLg /></span>
+                                    : <span className="attribute-icon no"><XLg /></span>
+                                }
+                             Natural</li>
                         </ul>
+                    </div>
+                    <div className="learn-more">
+                        <strong>Learn More</strong>
+                        { breedsList[currentBreedNumber].wikipedia_url && <p><a className="link-primary" href={ breedsList[currentBreedNumber].wikipedia_url } target="_blank" rel="noopener noreferrer">Wikipedia</a> <BoxArrowUpRight/></p> }  
+                        { breedsList[currentBreedNumber].vetstreet_url && <p><a className="link-primary" href={ breedsList[currentBreedNumber].vetstreet_url } target="_blank" rel="noopener noreferrer">Vetstreet</a> <BoxArrowUpRight/></p> }  
+                        { breedsList[currentBreedNumber].vcahospitals_url && <p><a className="link-primary" href={ breedsList[currentBreedNumber].vcahospitals_url } target="_blank" rel="noopener noreferrer">VCA Animal Hospitals</a> <BoxArrowUpRight/></p> }  
                     </div>
                 </div>
                 <div class="button-wrap">
