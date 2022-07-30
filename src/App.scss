@@ -3,7 +3,7 @@
 .breed-card-wrapper {
   flex-direction: column;
 
-  .button-wrap {
+  .prev-next-button-wrap {
     margin: 1rem auto 2rem auto;
     width: auto;
   }
@@ -34,7 +34,7 @@
     align-items: center;
     flex-direction: row;
     
-    .button-wrap {
+    .prev-next-button-wrap {
       margin: 0;
       width: 200px;
     }

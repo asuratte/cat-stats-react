@@ -34,7 +34,12 @@ const BreedCard = () => {
         }
     }
 
-    const handleChange = event => {
+    const getRandom = () => {
+        let randomNumber = Math.floor(Math.random() * breedsList.length)
+        setCurrentBreedNumber(randomNumber)
+    }
+
+    const handleSelectionChange = event => {
         setCurrentBreedNumber(Number(event.target.value))
     };
 
@@ -43,7 +48,7 @@ const BreedCard = () => {
             <div className="container">
                 <div className="breeds-select text-center mb-4">
                     <strong>Select a Breed: </strong>
-                    <select onChange={handleChange} name="breeds">
+                    <select onChange={handleSelectionChange} name="breeds">
                         {breedsList.map((breed, index) => (
                             <option key={index} value={index}>
                                 {breed.name}
@@ -51,43 +56,69 @@ const BreedCard = () => {
                         ))}
                     </select>
                 </div>
+                <div className="random-button-wrap text-center mb-4">
+                        <Button onClick={getRandom} className="btn btn-primary">Get Random Breed</Button>
+                </div>
                 <div className="breed-card-wrapper d-flex justify-content-center">
-                    <div className="button-wrap">
+                    <div className="prev-next-button-wrap">
                         <Button onClick={getPrevious} className="btn btn-primary">Previous</Button>
                     </div>
                     <div className="breed-card text-center mx-5">
                         <div className="name">
-                            <h3>{breedsList[currentBreedNumber].name}</h3>
+                        {
+                                (breedsList[currentBreedNumber].name)
+                                    ? <h3>{breedsList[currentBreedNumber].name}</h3>
+                                    : <p>Name unavailable</p>
+                            }
                         </div>
                         <div className="description">
-                            <p>{breedsList[currentBreedNumber].description}</p>
+                            {
+                                (breedsList[currentBreedNumber].description)
+                                    ? <p>{breedsList[currentBreedNumber].description}</p>
+                                    : <p>Description unavailable</p>
+                            }
                         </div>
                         <div className="image">
-                            {breedsList[currentBreedNumber].image.url && <img src={breedsList[currentBreedNumber].image.url} alt={breedsList[currentBreedNumber].name} />}
-                            {!breedsList[currentBreedNumber].image.url && <img src="https://www.placekitten.com/300/500" alt={breedsList[currentBreedNumber].name} />}
+                            {
+                                (breedsList[currentBreedNumber].image && breedsList[currentBreedNumber].image.url)
+                                    ? <img src={breedsList[currentBreedNumber].image.url} alt={breedsList[currentBreedNumber].name} />
+                                    : <img src="https://placekitten.com/300/500" alt={breedsList[currentBreedNumber].name} />
+                            }
                         </div>
                         <div className="temperament">
                             <strong>Temperament</strong>
-                            <p>{breedsList[currentBreedNumber].temperament}</p>
+                            {
+                                (breedsList[currentBreedNumber].temperament)
+                                    ? <p>{breedsList[currentBreedNumber].temperament}</p>
+                                    : <p>Temperament information unavailable</p>
+                            }
                         </div>
                         <div className="origin">
                             <strong>Place of Origin</strong>
-                            <p>{breedsList[currentBreedNumber].origin}</p>
+                            {
+                                (breedsList[currentBreedNumber].origin)
+                                    ? <p>{breedsList[currentBreedNumber].origin}</p>
+                                    : <p>Origin information unavailable</p>
+                            }
                         </div>
                         <div className="weight">
                             <strong>Weight</strong>
-                            <p>{breedsList[currentBreedNumber].weight.imperial} lbs</p>
+                            {
+                                (breedsList[currentBreedNumber].weight && breedsList[currentBreedNumber].weight.imperial)
+                                    ? <p>{breedsList[currentBreedNumber].weight.imperial} lbs</p>
+                                    : <p>Weight information unavailable</p>
+                            }
                         </div>
                         <div className="attributes-points">
                             <ul>
-                                <li>Affection +{breedsList[currentBreedNumber].affection_level}</li>
-                                <li>Energy +{breedsList[currentBreedNumber].energy_level}</li>
-                                <li>Vocalization +{breedsList[currentBreedNumber].vocalisation}</li>
-                                <li>Intelligence +{breedsList[currentBreedNumber].intelligence}</li>
-                                <li>Shedding +{breedsList[currentBreedNumber].shedding_level}</li>
-                                <li>Grooming +{breedsList[currentBreedNumber].grooming}</li>
-                                <li>Dog Friendly +{breedsList[currentBreedNumber].dog_friendly}</li>
-                                <li>Child Friendly +{breedsList[currentBreedNumber].child_friendly}</li>
+                                 {breedsList[currentBreedNumber].affection_level && <li>Affection +{breedsList[currentBreedNumber].affection_level}</li>}
+                                 {breedsList[currentBreedNumber].energy_level && <li>Energy +{breedsList[currentBreedNumber].energy_level}</li>}
+                                 {breedsList[currentBreedNumber].vocalisation && <li>Vocalization +{breedsList[currentBreedNumber].vocalisation}</li>}
+                                 {breedsList[currentBreedNumber].intelligence && <li>Intelligence +{breedsList[currentBreedNumber].intelligence}</li>}
+                                 {breedsList[currentBreedNumber].shedding_level && <li>Shedding +{breedsList[currentBreedNumber].shedding_level}</li>}
+                                 {breedsList[currentBreedNumber].grooming && <li>Grooming +{breedsList[currentBreedNumber].grooming}</li>}
+                                 {breedsList[currentBreedNumber].dog_friendly && <li>Dog Friendly +{breedsList[currentBreedNumber].dog_friendly}</li>}
+                                 {breedsList[currentBreedNumber].child_friendly && <li>Child Friendly +{breedsList[currentBreedNumber].child_friendly}</li>}
                             </ul>
                         </div>
                         <div className="attributes-yes-no">
@@ -152,7 +183,7 @@ const BreedCard = () => {
                             </div>
                         }
                     </div>
-                    <div className="button-wrap">
+                    <div className="prev-next-button-wrap">
                         <Button onClick={getNext} className="btn btn-primary">Next</Button>
                     </div>
                 </div>
