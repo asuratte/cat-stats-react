@@ -61,7 +61,7 @@ const BreedCard = () => {
                 </div>
                 <div className="breed-card-wrapper d-flex justify-content-center">
                     <div className="prev-next-button-wrap">
-                        <Button onClick={getPrevious} className="btn btn-primary">Previous</Button>
+                        <Button onClick={getPrevious} className="btn btn-primary" disabled={currentBreedNumber <= 0}>Previous</Button>
                     </div>
                     <div className="breed-card text-center mx-5">
                         <div className="name">
@@ -184,7 +184,7 @@ const BreedCard = () => {
                         }
                     </div>
                     <div className="prev-next-button-wrap">
-                        <Button onClick={getNext} className="btn btn-primary">Next</Button>
+                        <Button onClick={getNext} className="btn btn-primary" disabled={currentBreedNumber >= (breedsList.length - 1)}>Next</Button>
                     </div>
                 </div>
             </div>
