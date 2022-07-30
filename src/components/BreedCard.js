@@ -127,12 +127,14 @@ const BreedCard = () => {
                              Natural</li>
                         </ul>
                     </div>
-                    <div className="learn-more">
-                        <strong>Learn More</strong>
-                        { breedsList[currentBreedNumber].wikipedia_url && <p><a className="link-primary" href={ breedsList[currentBreedNumber].wikipedia_url } target="_blank" rel="noopener noreferrer">Wikipedia</a> <BoxArrowUpRight/></p> }  
-                        { breedsList[currentBreedNumber].vetstreet_url && <p><a className="link-primary" href={ breedsList[currentBreedNumber].vetstreet_url } target="_blank" rel="noopener noreferrer">Vetstreet</a> <BoxArrowUpRight/></p> }  
-                        { breedsList[currentBreedNumber].vcahospitals_url && <p><a className="link-primary" href={ breedsList[currentBreedNumber].vcahospitals_url } target="_blank" rel="noopener noreferrer">VCA Animal Hospitals</a> <BoxArrowUpRight/></p> }  
-                    </div>
+                    { (breedsList[currentBreedNumber].wikipedia_url || breedsList[currentBreedNumber].vetstreet_url || breedsList[currentBreedNumber].vcahospitals_url) && 
+                        <div className="learn-more">
+                            <strong>Learn More</strong>
+                            { breedsList[currentBreedNumber].wikipedia_url && <p><a className="link-primary" href={ breedsList[currentBreedNumber].wikipedia_url } target="_blank" rel="noopener noreferrer">Wikipedia</a> <BoxArrowUpRight/></p> }  
+                            { breedsList[currentBreedNumber].vetstreet_url && <p><a className="link-primary" href={ breedsList[currentBreedNumber].vetstreet_url } target="_blank" rel="noopener noreferrer">Vetstreet</a> <BoxArrowUpRight/></p> }  
+                            { breedsList[currentBreedNumber].vcahospitals_url && <p><a className="link-primary" href={ breedsList[currentBreedNumber].vcahospitals_url } target="_blank" rel="noopener noreferrer">VCA Animal Hospitals</a> <BoxArrowUpRight/></p> }  
+                        </div>
+                    }
                 </div>
                 <div class="button-wrap">
                     <Button onClick={getNext} className="btn btn-primary">Next</Button>
