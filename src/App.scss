@@ -7,17 +7,36 @@
     margin: 1rem auto 2rem auto;
     width: auto;
   }
+
+  .image img {
+    max-width: 300px;
+  }
+
+  .attributes-yes-no, .attributes-points {
+    .attribute-icon {
+      margin-right: .5rem;
+      &.no {
+        color: red;
+      }
+      &.yes {
+        color: green;
+      }
+    }
+    ul {
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
+    }
+  }
+
   @media screen and (min-width: 992px) {
     align-items: center;
     flex-direction: row;
     
     .button-wrap {
       margin: 0;
-      width: 6rem;
+      width: 200px;
     }
   }
-}
-
-body {
-  margin-bottom: 5rem;
 }
