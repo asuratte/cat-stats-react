@@ -35,13 +35,13 @@ const BreedCard = () => {
     }
 
     const handleChange = event => {
-        setCurrentBreedNumber(event.target.value)
+        setCurrentBreedNumber(Number(event.target.value))
     };
 
     if (breedsList) {
         return (
             <div className="container">
-                <div class="breeds-select text-center mb-4">
+                <div className="breeds-select text-center mb-4">
                     <strong>Select a Breed: </strong>
                     <select onChange={handleChange} name="breeds">
                         {breedsList.map((breed, index) => (
@@ -63,7 +63,8 @@ const BreedCard = () => {
                             <p>{breedsList[currentBreedNumber].description}</p>
                         </div>
                         <div className="image">
-                            <img src={breedsList[currentBreedNumber].image.url} alt={breedsList[currentBreedNumber].name} />
+                            {breedsList[currentBreedNumber].image.url && <img src={breedsList[currentBreedNumber].image.url} alt={breedsList[currentBreedNumber].name} />}
+                            {!breedsList[currentBreedNumber].image.url && <img src="https://www.placekitten.com/300/500" alt={breedsList[currentBreedNumber].name} />}
                         </div>
                         <div className="temperament">
                             <strong>Temperament</strong>
