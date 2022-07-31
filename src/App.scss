@@ -7,6 +7,10 @@ $green-accent: #71B9AC;
 $blue-accent: #B8D8E1;
 $purple-accent: #856B9C;
 $pink-accent: #CC95B4;
+$gradient-purple: linear-gradient(90deg, rgb(155, 82, 221) 0%, rgb(188, 89, 223) 43%, rgb(230, 83, 197) 100%);
+$gradient-purple-fallback: rgb(166,114,213);
+$gradient-blue: linear-gradient(90deg, rgba(34,82,218,1) 0%, rgba(69,152,247,1) 100%); 
+$gradient-blue-fallback: rgb(34,82,218);
 
 html {
   font-size: 16px;
@@ -31,6 +35,32 @@ h3 {
 
 nav {
   background: $blue-accent;
+}
+
+.btn {
+  &.random-button {
+    background: $gradient-purple-fallback;
+    background: $gradient-purple;
+  }
+  &.prev-button, &.next-button  {
+    background: $gradient-blue-fallback;
+    background: $gradient-blue;
+  }
+  border-radius: 1.5rem;
+  padding: .5rem 1.5rem;
+  border: none;
+  font-weight: 700;
+  color: $white;
+  font-size: 1.1rem;
+  opacity: 1;
+  transition: opacity 0.5s;
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.5s;
+  }
+  &:disabled {
+      visibility: hidden;
+  }
 }
 
 footer {

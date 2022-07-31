@@ -59,13 +59,13 @@ const BreedCard = () => {
                             </select>
                         </div>
                         <div className="random-button-wrap text-center">
-                                <Button onClick={getRandom} className="btn btn-primary">Get Random Breed</Button>
+                                <Button onClick={getRandom} className="btn random-button">Get Random Breed</Button>
                         </div>
                         <div className="prev-next-button-wrap">
-                            <Button onClick={getPrevious} className="btn btn-primary" disabled={currentBreedNumber <= 0}>Previous</Button>
+                            <Button onClick={getPrevious} className="btn prev-button" disabled={currentBreedNumber <= 0}>Previous</Button>
                         </div>
                         <div className="prev-next-button-wrap">
-                            <Button onClick={getNext} className="btn btn-primary" disabled={currentBreedNumber >= (breedsList.length - 1)}>Next</Button>
+                            <Button onClick={getNext} className="btn next-button" disabled={currentBreedNumber >= (breedsList.length - 1)}>Next</Button>
                         </div>
                     </div>
                 </nav>
