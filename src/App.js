@@ -14,6 +14,7 @@ const App = () => {
               <img src={ logo } alt="CatStats Logo" className="cat-stats-icon" />
               <h1>CatStats</h1>
             </div>
+            <p>Learn more about your favorite four-legged friends</p>
           </div>
         </header>
         <main className="flex-shrink-0 my-4">
