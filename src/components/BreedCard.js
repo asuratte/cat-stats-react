@@ -55,7 +55,9 @@ const BreedCard = () => {
     };
 
     const getStars = (numberOfStars) => {
-        return [...Array(numberOfStars)].map((e, i) => <StarFill />);
+        return [...Array(numberOfStars)].map((e, i) => <StarFill 
+            key={i}
+        />);
     }
 
     if (loading) {
@@ -78,10 +80,10 @@ const BreedCard = () => {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg mb-4">
-                    <div class="container-fluid justify-content-center align-items-center py-3">
+                    <div className="container-fluid justify-content-center align-items-center py-3">
                         <div className="breeds-select text-center">
-                            <select onChange={handleSelectionChange} name="breeds" className="form-select">
-                                <option selected disabled="disabled">Select a breed...</option>
+                            <select onChange={handleSelectionChange} name="breeds" className="form-select" defaultValue={'DEFAULT'}>
+                                <option key="DEFAULT" value="DEFAULT" disabled="disabled">Select a breed...</option>
                                 {breedsList.map((breed, index) => (
                                     <option key={index} value={index}>
                                         {breed.name}

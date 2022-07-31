@@ -7,8 +7,8 @@ const App = () => {
   let currentYear = new Date().getFullYear();
 
   return (
-      <div class="d-flex flex-column h-100">
-        <div class="flex-shrink-0">
+      <div className="d-flex flex-column h-100">
+        <div className="flex-shrink-0">
           <header>
             <div className="container mt-4 text-center">
               <div className="logo-container d-flex justify-content-center align-items-baseline">
