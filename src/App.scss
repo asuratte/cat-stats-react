@@ -38,7 +38,7 @@ nav {
   background: $blue-accent;
 }
 
-.two-column-section {
+.main-two-column-section {
   display: flex;
   flex-direction: column;
 }
@@ -53,6 +53,9 @@ nav {
     color: $purple-accent!important;
     transition: color 0.5s;
   }
+}
+.external-link {
+  color: $purple-accent;
 }
 
 .section-wrapper h4 {
@@ -152,10 +155,10 @@ nav .container-fluid {
     .attribute-icon {
       margin-right: .5rem;
       &.no {
-        color: red;
+        color: $pink-accent;
       }
       &.yes {
-        color: green;
+        color: $green-accent;
       }
     }
     ul {
@@ -168,7 +171,7 @@ nav .container-fluid {
 
   .attributes-points {
     .points-value {
-      color: $purple-accent;
+      color: $pink-accent;
       font-weight: 500;
       margin-left: .5rem;
     }
@@ -204,7 +207,7 @@ nav .container-fluid {
     }
   }
 
-  .two-column-section {
+  .main-two-column-section {
     flex-direction: row;
     justify-content: space-between;
     
@@ -213,7 +216,21 @@ nav .container-fluid {
       margin-left: 2rem;
     }
   }
-  .three-column-section {
+  .two-column-inner-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .section-wrapper {
+      width: 100%;
+      &.attributes-yes-no {
+        margin-right: 1rem;
+      }
+    }
+    @media screen and (max-width: 1199px) {
+      flex-direction: column;
+    }
+  }
+  .three-column-inner-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -226,6 +243,11 @@ nav .container-fluid {
     }
     @media screen and (max-width: 1199px) {
       flex-direction: column;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .attributes-points.section-wrapper > * li{
+      text-align: left;
     }
   }
 }
