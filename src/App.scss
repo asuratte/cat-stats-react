@@ -11,6 +11,7 @@ $gradient-purple: linear-gradient(90deg, rgb(155, 82, 221) 0%, rgb(188, 89, 223)
 $gradient-purple-fallback: rgb(166,114,213);
 $gradient-blue: linear-gradient(90deg, rgba(34,82,218,1) 0%, rgba(69,152,247,1) 100%); 
 $gradient-blue-fallback: rgb(34,82,218);
+$border: #F2F2F2;
 
 /* Mobile First */
 html {
@@ -30,6 +31,11 @@ body {
   color: $dark;
 }
 
+header {
+  background-color: $white;
+  border-bottom: 1px solid $border;
+}
+
 h1 {
   font-weight: 900;
   font-size: 3.5rem;
@@ -43,6 +49,7 @@ h3 {
 
 nav {
   background: $blue-accent;
+  border-bottom: 1px solid $border;
 }
 
 p {
@@ -66,11 +73,6 @@ p {
 }
 .external-link {
   color: $purple-accent;
-}
-
-.section-wrapper h4 {
-  font-size: 1.25rem;
-  font-weight: 700;
 }
 
 .cat-stats-icon {
@@ -131,6 +133,11 @@ footer {
     background-color: $green-accent;
     color: $white;
   }
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  border: 1px solid #F2F2F2;
 }
 
 nav .container-fluid {

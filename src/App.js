@@ -9,8 +9,8 @@ const App = () => {
   return (
       <div className="d-flex flex-column h-100">
         <div className="flex-shrink-0">
-          <header>
-            <div className="container mt-4 text-center">
+          <header className="py-4">
+            <div className="container text-center">
               <div className="logo-container d-flex justify-content-center align-items-baseline">
                 <img src={ logo } alt="CatStats Logo" className="cat-stats-icon" />
                 <h1>CatStats</h1>
@@ -18,7 +18,7 @@ const App = () => {
               <p>Learn more about your favorite four-legged friends</p>
             </div>
           </header>
-          <main className="my-4">
+          <main className="mb-4">
             <BreedCard />
           </main>
         </div>
