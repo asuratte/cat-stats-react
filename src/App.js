@@ -59,16 +59,26 @@ const App = () => {
 
   if (loading) {
     return (
-      <div className="container text-center">
-        Loading <Hearts color="rgb(230, 83, 197)" height={80} width={80} wrapperClass="loader" />
+      <div className="d-flex flex-column h-100">
+        <div className="flex-shrink-0">
+          <div className="container text-center mt-4">
+            Loading <Hearts color="rgb(230, 83, 197)" height={80} width={80} wrapperClass="loader" />
+          </div>
+        </div>
+        <Footer />
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="container text-center">
-        <p className="alert alert-danger">An error has occurred while loading CatStats. Please try again.</p>
+      <div className="d-flex flex-column h-100">
+        <div className="flex-shrink-0">
+          <div className="container text-center">
+            <p className="alert alert-danger mt-4">An error has occurred while loading CatStats. Please try again.</p>
+          </div>
+        </div>
+        <Footer />
       </div>
     );
   }
@@ -77,7 +87,7 @@ const App = () => {
     return (
       <div className="d-flex flex-column h-100">
         <div className="flex-shrink-0">
-        <Header />
+          <Header />
           <main className="mb-4">
             <Navigation breedsList={breedsList} currentBreedNumber={currentBreedNumber} handleSelectionChange={handleSelectionChange} getPrevious={getPrevious} getNext={getNext} getRandom={getRandom} />
             <BreedCard breedsList={breedsList} currentBreedNumber={currentBreedNumber} />
