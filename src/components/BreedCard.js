@@ -98,7 +98,7 @@ const BreedCard = () => {
                             </div>
                             <div className="details-column">
                                 <div className="temperament section-wrapper">
-                                    <strong>Temperament</strong>
+                                    <h4>Temperament</h4>
                                     {
                                         (breedsList[currentBreedNumber].temperament)
                                             ? <p>{breedsList[currentBreedNumber].temperament}</p>
@@ -107,7 +107,7 @@ const BreedCard = () => {
                                 </div>
                                 <div className="three-column-section">
                                     <div className="lifespan section-wrapper">
-                                        <strong>Life Span</strong>
+                                        <h4>Life Span</h4>
                                         {
                                             (breedsList[currentBreedNumber].life_span)
                                                 ? <p>{breedsList[currentBreedNumber].life_span} years</p>
@@ -115,7 +115,7 @@ const BreedCard = () => {
                                         }
                                     </div>
                                     <div className="origin section-wrapper">
-                                        <strong>Place of Origin</strong>
+                                        <h4>Place of Origin</h4>
                                         {
                                             (breedsList[currentBreedNumber].origin)
                                                 ? <p>{breedsList[currentBreedNumber].origin}</p>
@@ -123,7 +123,7 @@ const BreedCard = () => {
                                         }
                                     </div>
                                     <div className="weight section-wrapper">
-                                        <strong>Weight</strong>
+                                        <h4>Weight</h4>
                                         {
                                             (breedsList[currentBreedNumber].weight && breedsList[currentBreedNumber].weight.imperial)
                                                 ? <p>{breedsList[currentBreedNumber].weight.imperial} lbs</p>
@@ -133,14 +133,18 @@ const BreedCard = () => {
                                 </div>
                                 <div className="attributes-points section-wrapper">
                                     <ul>
-                                        {breedsList[currentBreedNumber].affection_level && <li>Affection +{breedsList[currentBreedNumber].affection_level}</li>}
-                                        {breedsList[currentBreedNumber].energy_level && <li>Energy +{breedsList[currentBreedNumber].energy_level}</li>}
-                                        {breedsList[currentBreedNumber].vocalisation && <li>Vocalization +{breedsList[currentBreedNumber].vocalisation}</li>}
-                                        {breedsList[currentBreedNumber].intelligence && <li>Intelligence +{breedsList[currentBreedNumber].intelligence}</li>}
-                                        {breedsList[currentBreedNumber].shedding_level && <li>Shedding +{breedsList[currentBreedNumber].shedding_level}</li>}
-                                        {breedsList[currentBreedNumber].grooming && <li>Grooming +{breedsList[currentBreedNumber].grooming}</li>}
-                                        {breedsList[currentBreedNumber].dog_friendly && <li>Dog Friendly +{breedsList[currentBreedNumber].dog_friendly}</li>}
-                                        {breedsList[currentBreedNumber].child_friendly && <li>Child Friendly +{breedsList[currentBreedNumber].child_friendly}</li>}
+                                        <span>
+                                            {breedsList[currentBreedNumber].affection_level && <li>Affection <span className="points-value">+{breedsList[currentBreedNumber].affection_level}</span></li>} 
+                                            {breedsList[currentBreedNumber].energy_level && <li>Energy <span className="points-value">+{breedsList[currentBreedNumber].energy_level}</span></li>}
+                                            {breedsList[currentBreedNumber].vocalisation && <li>Vocalization <span className="points-value">+{breedsList[currentBreedNumber].vocalisation}</span></li>}
+                                            {breedsList[currentBreedNumber].intelligence && <li>Intelligence <span className="points-value">+{breedsList[currentBreedNumber].intelligence}</span></li>}
+                                        </span>
+                                        <span>
+                                            {breedsList[currentBreedNumber].shedding_level && <li>Shedding <span className="points-value">+{breedsList[currentBreedNumber].shedding_level}</span></li>}
+                                            {breedsList[currentBreedNumber].grooming && <li>Grooming <span className="points-value">+{breedsList[currentBreedNumber].grooming}</span></li>}
+                                            {breedsList[currentBreedNumber].dog_friendly && <li>Dog Friendly <span className="points-value">+{breedsList[currentBreedNumber].dog_friendly}</span></li>}
+                                            {breedsList[currentBreedNumber].child_friendly && <li>Child Friendly <span className="points-value">+{breedsList[currentBreedNumber].child_friendly}</span></li>}
+                                        </span>
                                     </ul>
                                 </div>
                                 <div className="attributes-yes-no section-wrapper">
@@ -198,7 +202,7 @@ const BreedCard = () => {
                                 </div>
                                 {(breedsList[currentBreedNumber].wikipedia_url || breedsList[currentBreedNumber].vetstreet_url || breedsList[currentBreedNumber].vcahospitals_url) &&
                                     <div className="learn-more section-wrapper">
-                                        <strong>Learn More</strong>
+                                        <h4>Learn More</h4>
                                         {breedsList[currentBreedNumber].wikipedia_url && <p><a className="link-primary" href={breedsList[currentBreedNumber].wikipedia_url} target="_blank" rel="noopener noreferrer">Wikipedia</a> <BoxArrowUpRight /></p>}
                                         {breedsList[currentBreedNumber].vetstreet_url && <p><a className="link-primary" href={breedsList[currentBreedNumber].vetstreet_url} target="_blank" rel="noopener noreferrer">Vetstreet</a> <BoxArrowUpRight /></p>}
                                         {breedsList[currentBreedNumber].vcahospitals_url && <p><a className="link-primary" href={breedsList[currentBreedNumber].vcahospitals_url} target="_blank" rel="noopener noreferrer">VCA Animal Hospitals</a> <BoxArrowUpRight /></p>}

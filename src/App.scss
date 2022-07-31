@@ -44,11 +44,20 @@ nav {
 }
 
 .link-primary {
-  color: $purple-accent!important;
+  color: $dark!important;
   font-weight: 500;
-  &:hover {
-    color: $dark!important;
+  margin-top: .5rem;
+  display: inline-block;
+  transition: color 0.5s;
+  &:hover, &:active, &:focus {
+    color: $purple-accent!important;
+    transition: color 0.5s;
   }
+}
+
+.section-wrapper h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .cat-stats-icon {
@@ -154,6 +163,20 @@ nav .container-fluid {
     }
     li {
       list-style-type: none;
+    }
+  }
+
+  .attributes-points {
+    .points-value {
+      color: $purple-accent;
+      font-weight: 500;
+      margin-left: .5rem;
+    }
+    @media screen and (min-width: 1200px) {
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+      }
     }
   }
 
