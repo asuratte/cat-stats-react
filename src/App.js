@@ -61,6 +61,7 @@ const App = () => {
     return (
       <div className="d-flex flex-column h-100">
         <div className="flex-shrink-0">
+          <Header />
           <div className="container text-center mt-4">
             Loading <Hearts color="rgb(230, 83, 197)" height={80} width={80} wrapperClass="loader" />
           </div>
@@ -74,6 +75,7 @@ const App = () => {
     return (
       <div className="d-flex flex-column h-100">
         <div className="flex-shrink-0">
+          <Header />
           <div className="container text-center">
             <p className="alert alert-danger mt-4">An error has occurred while loading CatStats. Please try again.</p>
           </div>
