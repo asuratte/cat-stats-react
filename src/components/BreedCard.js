@@ -5,21 +5,28 @@ import { CheckLg } from 'react-bootstrap-icons';
 import { XLg } from 'react-bootstrap-icons';
 import { StarFill } from 'react-bootstrap-icons';
 import { BoxArrowUpRight } from 'react-bootstrap-icons';
+import { Hearts } from  'react-loader-spinner'
 
 const BreedCard = () => {
 
     const [breedsList, setBreedsList] = useState(null);
     const [currentBreedNumber, setCurrentBreedNumber] = useState(0);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         const options = {
             method: 'GET',
             url: 'https://api.thecatapi.com/v1/breeds'
         };
         axios.request(options).then((response) => {
             setBreedsList(response.data);
+            setLoading(false);
         }).catch((error) => {
             console.error(error);
+            setLoading(false);
+            setError(true);
         })
     }, []);
 
@@ -49,6 +56,22 @@ const BreedCard = () => {
 
     const getStars = (numberOfStars) => {
         return [...Array(numberOfStars)].map((e, i) => <StarFill />);
+    }
+
+    if (loading) {
+        return (
+          <div className="container text-center">
+            Loading <Hearts color="rgb(230, 83, 197)" height={80} width={80} wrapperClass="loader" />
+          </div>
+        );
+    }
+
+    if (error) {
+        return (
+          <div className="container text-center">
+            <p className="alert alert-danger">An error has occurred while loading CatStats. Please try again.</p>
+          </div>
+        );
     }
 
     if (breedsList) {
