@@ -29,6 +29,10 @@ h3 {
   font-size: 2rem;
 }
 
+nav {
+  background: $blue-accent;
+}
+
 footer {
   background-color: $dark;
   color: $white;
@@ -47,14 +51,36 @@ footer {
   }
 }
 
-.breed-card-wrapper {
+nav .container-fluid {
   flex-direction: column;
 
-  .prev-next-button-wrap {
-    margin: 1rem auto 2rem auto;
-    width: auto;
-    text-align: center;
+  .breeds-select {
+    margin-bottom: 1.5rem;
   }
+
+  .prev-next-button-wrap, .random-button-wrap {
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  nav .container-fluid {
+    flex-direction: row;
+
+    .breeds-select {
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+
+    .prev-next-button-wrap, .random-button-wrap {
+      margin-right: 2rem;
+      margin-top: 0;
+    }
+  }
+}
+
+.breed-card-wrapper {
+  flex-direction: column;
 
   .image img {
     max-width: 300px;
@@ -81,10 +107,5 @@ footer {
   @media screen and (min-width: 992px) {
     align-items: center;
     flex-direction: row;
-    
-    .prev-next-button-wrap {
-      margin: 0;
-      width: 200px;
-    }
   }
 }

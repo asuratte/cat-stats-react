@@ -8,11 +8,11 @@ const App = () => {
   return (
       <div>
         <header>
-          <div className="container mt-5 text-center">
+          <div className="container mt-4 text-center">
               <h1>CatStats</h1>
           </div>
         </header>
-        <main className="flex-shrink-0 container my-4">
+        <main className="flex-shrink-0 my-4">
           <BreedCard />
         </main>
         <footer className="flex-shrink-0 py-4">

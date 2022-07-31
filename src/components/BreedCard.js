@@ -45,24 +45,31 @@ const BreedCard = () => {
 
     if (breedsList) {
         return (
-            <div className="container">
-                <div className="breeds-select text-center mb-4">
-                    <strong>Select a Breed: </strong>
-                    <select onChange={handleSelectionChange} name="breeds">
-                        {breedsList.map((breed, index) => (
-                            <option key={index} value={index}>
-                                {breed.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div className="random-button-wrap text-center mb-4">
-                        <Button onClick={getRandom} className="btn btn-primary">Get Random Breed</Button>
-                </div>
-                <div className="breed-card-wrapper d-flex justify-content-center">
-                    <div className="prev-next-button-wrap">
-                        <Button onClick={getPrevious} className="btn btn-primary" disabled={currentBreedNumber <= 0}>Previous</Button>
+            <div>
+                <nav className="navbar navbar-expand-lg mb-4">
+                    <div class="container-fluid justify-content-center align-items-center py-3">
+                        <div className="breeds-select text-center">
+                            <strong>Select a Breed: </strong>
+                            <select onChange={handleSelectionChange} name="breeds">
+                                {breedsList.map((breed, index) => (
+                                    <option key={index} value={index}>
+                                        {breed.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="random-button-wrap text-center">
+                                <Button onClick={getRandom} className="btn btn-primary">Get Random Breed</Button>
+                        </div>
+                        <div className="prev-next-button-wrap">
+                            <Button onClick={getPrevious} className="btn btn-primary" disabled={currentBreedNumber <= 0}>Previous</Button>
+                        </div>
+                        <div className="prev-next-button-wrap">
+                            <Button onClick={getNext} className="btn btn-primary" disabled={currentBreedNumber >= (breedsList.length - 1)}>Next</Button>
+                        </div>
                     </div>
+                </nav>
+                <div className="breed-card-wrapper d-flex justify-content-center container">
                     <div className="breed-card text-center">
                         <div className="name bg-green section-wrapper">
                         {
@@ -182,9 +189,6 @@ const BreedCard = () => {
                                 {breedsList[currentBreedNumber].vcahospitals_url && <p><a className="link-primary" href={breedsList[currentBreedNumber].vcahospitals_url} target="_blank" rel="noopener noreferrer">VCA Animal Hospitals</a> <BoxArrowUpRight /></p>}
                             </div>
                         }
-                    </div>
-                    <div className="prev-next-button-wrap">
-                        <Button onClick={getNext} className="btn btn-primary" disabled={currentBreedNumber >= (breedsList.length - 1)}>Next</Button>
                     </div>
                 </div>
             </div>
