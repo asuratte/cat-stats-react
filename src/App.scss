@@ -4,7 +4,7 @@
 $white: #FFFFFF;
 $dark: #1F172E;
 $green-accent: #71B9AC;
-$blue-accent: #B8D8E1;
+$blue-accent: #A9D1DB;
 $purple-accent: #856B9C;
 $pink-accent: #CC95B4;
 $gradient-purple: linear-gradient(90deg, rgb(155, 82, 221) 0%, rgb(188, 89, 223) 43%, rgb(230, 83, 197) 100%);
@@ -37,6 +37,13 @@ nav {
   background: $blue-accent;
 }
 
+.cat-stats-icon {
+  width: 4rem;
+  margin-right: .75rem;
+  fill: $gradient-purple-fallback;
+  fill: $gradient-purple;
+}
+
 .btn {
   &.random-button {
     background: $gradient-purple-fallback;
@@ -45,6 +52,9 @@ nav {
   &.prev-button, &.next-button  {
     background: $gradient-blue-fallback;
     background: $gradient-blue;
+  }
+  &.prev-button {
+    margin-right: 2rem;
   }
   border-radius: 1.5rem;
   padding: .5rem 1.5rem;
@@ -59,7 +69,13 @@ nav {
     transition: opacity 0.5s;
   }
   &:disabled {
-      visibility: hidden;
+      opacity: 0.2;
+      transition: opacity 0.5s;
+  }
+  @media screen and (min-width: 992px) {
+    &.random-button {
+      margin-right: 2rem;
+    }
   }
 }
 
@@ -88,8 +104,12 @@ nav .container-fluid {
     margin-bottom: 1.5rem;
   }
 
-  .prev-next-button-wrap, .random-button-wrap {
+  .prev-next-button-wrap {
     margin-top: 1.5rem;
+  }
+
+  .random-button-wrap {
+    margin-top: .25rem;
   }
 }
 
@@ -103,7 +123,6 @@ nav .container-fluid {
     }
 
     .prev-next-button-wrap, .random-button-wrap {
-      margin-right: 2rem;
       margin-top: 0;
     }
   }

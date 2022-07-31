@@ -35,7 +35,10 @@ const BreedCard = () => {
     }
 
     const getRandom = () => {
-        let randomNumber = Math.floor(Math.random() * breedsList.length)
+        let randomNumber;
+        do {
+            randomNumber = Math.floor(Math.random() * breedsList.length)
+        } while (randomNumber === currentBreedNumber);
         setCurrentBreedNumber(randomNumber)
     }
 
@@ -49,8 +52,8 @@ const BreedCard = () => {
                 <nav className="navbar navbar-expand-lg mb-4">
                     <div class="container-fluid justify-content-center align-items-center py-3">
                         <div className="breeds-select text-center">
-                            <strong>Select a Breed: </strong>
-                            <select onChange={handleSelectionChange} name="breeds">
+                            <select onChange={handleSelectionChange} name="breeds" className="form-select">
+                                <option selected disabled="disabled">Select a breed...</option>
                                 {breedsList.map((breed, index) => (
                                     <option key={index} value={index}>
                                         {breed.name}
@@ -63,8 +66,6 @@ const BreedCard = () => {
                         </div>
                         <div className="prev-next-button-wrap">
                             <Button onClick={getPrevious} className="btn prev-button" disabled={currentBreedNumber <= 0}>Previous</Button>
-                        </div>
-                        <div className="prev-next-button-wrap">
                             <Button onClick={getNext} className="btn next-button" disabled={currentBreedNumber >= (breedsList.length - 1)}>Next</Button>
                         </div>
                     </div>
