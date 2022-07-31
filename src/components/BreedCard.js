@@ -63,29 +63,29 @@ const BreedCard = () => {
                     <div className="prev-next-button-wrap">
                         <Button onClick={getPrevious} className="btn btn-primary" disabled={currentBreedNumber <= 0}>Previous</Button>
                     </div>
-                    <div className="breed-card text-center mx-5">
-                        <div className="name">
+                    <div className="breed-card text-center">
+                        <div className="name bg-green section-wrapper">
                         {
                                 (breedsList[currentBreedNumber].name)
                                     ? <h3>{breedsList[currentBreedNumber].name}</h3>
                                     : <p>Name unavailable</p>
                             }
                         </div>
-                        <div className="description">
+                        <div className="description section-wrapper">
                             {
                                 (breedsList[currentBreedNumber].description)
                                     ? <p>{breedsList[currentBreedNumber].description}</p>
                                     : <p>Description unavailable</p>
                             }
                         </div>
-                        <div className="image">
+                        <div className="image section-wrapper">
                             {
                                 (breedsList[currentBreedNumber].image && breedsList[currentBreedNumber].image.url)
                                     ? <img src={breedsList[currentBreedNumber].image.url} alt={breedsList[currentBreedNumber].name} />
                                     : <img src="https://placekitten.com/300/500" alt={breedsList[currentBreedNumber].name} />
                             }
                         </div>
-                        <div className="temperament">
+                        <div className="temperament section-wrapper">
                             <strong>Temperament</strong>
                             {
                                 (breedsList[currentBreedNumber].temperament)
@@ -93,7 +93,7 @@ const BreedCard = () => {
                                     : <p>Temperament information unavailable</p>
                             }
                         </div>
-                        <div className="origin">
+                        <div className="origin section-wrapper">
                             <strong>Place of Origin</strong>
                             {
                                 (breedsList[currentBreedNumber].origin)
@@ -101,7 +101,7 @@ const BreedCard = () => {
                                     : <p>Origin information unavailable</p>
                             }
                         </div>
-                        <div className="weight">
+                        <div className="weight section-wrapper">
                             <strong>Weight</strong>
                             {
                                 (breedsList[currentBreedNumber].weight && breedsList[currentBreedNumber].weight.imperial)
@@ -109,7 +109,7 @@ const BreedCard = () => {
                                     : <p>Weight information unavailable</p>
                             }
                         </div>
-                        <div className="attributes-points">
+                        <div className="attributes-points section-wrapper">
                             <ul>
                                  {breedsList[currentBreedNumber].affection_level && <li>Affection +{breedsList[currentBreedNumber].affection_level}</li>}
                                  {breedsList[currentBreedNumber].energy_level && <li>Energy +{breedsList[currentBreedNumber].energy_level}</li>}
@@ -121,7 +121,7 @@ const BreedCard = () => {
                                  {breedsList[currentBreedNumber].child_friendly && <li>Child Friendly +{breedsList[currentBreedNumber].child_friendly}</li>}
                             </ul>
                         </div>
-                        <div className="attributes-yes-no">
+                        <div className="attributes-yes-no section-wrapper">
                             <ul>
                                 <li>
                                     {
@@ -175,7 +175,7 @@ const BreedCard = () => {
                             </ul>
                         </div>
                         {(breedsList[currentBreedNumber].wikipedia_url || breedsList[currentBreedNumber].vetstreet_url || breedsList[currentBreedNumber].vcahospitals_url) &&
-                            <div className="learn-more">
+                            <div className="learn-more section-wrapper">
                                 <strong>Learn More</strong>
                                 {breedsList[currentBreedNumber].wikipedia_url && <p><a className="link-primary" href={breedsList[currentBreedNumber].wikipedia_url} target="_blank" rel="noopener noreferrer">Wikipedia</a> <BoxArrowUpRight /></p>}
                                 {breedsList[currentBreedNumber].vetstreet_url && <p><a className="link-primary" href={breedsList[currentBreedNumber].vetstreet_url} target="_blank" rel="noopener noreferrer">Vetstreet</a> <BoxArrowUpRight /></p>}

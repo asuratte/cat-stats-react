@@ -15,7 +15,7 @@ const App = () => {
         <main className="flex-shrink-0 container my-4">
           <BreedCard />
         </main>
-        <footer className="flex-shrink-0 py-4 bg-light">
+        <footer className="flex-shrink-0 py-4">
           <div className="container text-center">
            &copy;{ currentYear } CatStats. All rights reserved.
           </div>
