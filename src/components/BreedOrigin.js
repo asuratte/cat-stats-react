@@ -3,7 +3,7 @@ const BreedOrigin = (props) => {
 
     return (
         <div className="origin section-wrapper">
-            <h4>Place of Origin</h4>
+            <h3>Place of Origin</h3>
             {
                 (breedsList[currentBreedNumber].origin)
                     ? <p>{breedsList[currentBreedNumber].origin}</p>

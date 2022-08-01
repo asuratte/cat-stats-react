@@ -5,7 +5,7 @@ const BreedName = (props) => {
         <div className="name bg-green section-wrapper">
             {
                 (breedsList[currentBreedNumber].name)
-                    ? <h3>{breedsList[currentBreedNumber].name}</h3>
+                    ? <h2>{breedsList[currentBreedNumber].name}</h2>
                     : <p>Name unavailable</p>
             }
         </div>

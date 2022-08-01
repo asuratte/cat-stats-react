@@ -3,7 +3,7 @@ const BreedTemperament = (props) => {
 
     return (
         <div className="temperament section-wrapper">
-            <h4>Temperament</h4>
+            <h3>Temperament</h3>
             {
                 (breedsList[currentBreedNumber].temperament)
                     ? <p>{breedsList[currentBreedNumber].temperament}</p>

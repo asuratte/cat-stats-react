@@ -3,7 +3,7 @@ const BreedLifespan = (props) => {
 
     return (
         <div className="lifespan section-wrapper">
-            <h4>Life Span</h4>
+            <h3>Life Span</h3>
             {
                 (breedsList[currentBreedNumber].life_span)
                     ? <p>{breedsList[currentBreedNumber].life_span} years</p>

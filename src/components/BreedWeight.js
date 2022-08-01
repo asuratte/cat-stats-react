@@ -3,7 +3,7 @@ const BreedWeight = (props) => {
 
     return (
         <div className="weight section-wrapper">
-            <h4>Weight</h4>
+            <h3>Weight</h3>
             {
                 (breedsList[currentBreedNumber].weight && breedsList[currentBreedNumber].weight.imperial)
                     ? <p>{breedsList[currentBreedNumber].weight.imperial} lbs</p>

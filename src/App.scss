@@ -3,7 +3,7 @@
 
 $white: #FFFFFF;
 $dark: #1F172E;
-$green-accent: #4FBBA8;
+$green-accent: #42a292;
 $blue-accent: #A9D1DB;
 $purple-accent: rgb(155, 82, 221);
 $pink-accent: rgb(230, 83, 197);
@@ -41,7 +41,7 @@ h1 {
   font-size: 3.5rem;
 }
 
-h3 {
+h2 {
   font-weight: 700;
   font-size: 2rem;
   margin: 0;
@@ -133,7 +133,7 @@ footer {
     background-color: $green-accent;
     color: $white;
   }
-  h4 {
+  h3 {
     font-size: 1.25rem;
     font-weight: 700;
   }
