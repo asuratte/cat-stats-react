@@ -1,15 +1,37 @@
+import React, { useState, useEffect } from 'react';
+
 const BreedImage = (props) => {
     const { breedsList, currentBreedNumber } = props;
+    const [imageUrl, setImageUrl] = useState('');
+
+    useEffect(() => {
+        const getBreedImageUrl = (breedId) => {
+            fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.length > 0) {
+                        setImageUrl(data[0].url);
+                    } else {
+                        console.error('No image found for breed:', breedId);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching image:', error);
+                });
+        };
+
+        getBreedImageUrl(breedsList[currentBreedNumber].id);
+    }, [breedsList, currentBreedNumber]);
 
     return (
         <div className="image section-wrapper">
-            {
-                (breedsList[currentBreedNumber].image && breedsList[currentBreedNumber].image.url)
-                    ? <img src={breedsList[currentBreedNumber].image.url} alt={breedsList[currentBreedNumber].name} />
-                    : <img src="https://placekitten.com/300/500" alt={breedsList[currentBreedNumber].name} />
-            }
+            {imageUrl ? (
+                <img src={imageUrl} alt={breedsList[currentBreedNumber].name} />
+            ) : (
+                <img src="https://placekitten.com/300/500" alt={breedsList[currentBreedNumber].name} />
+            )}
         </div>
-    )
-}
+    );
+};
 
-export default BreedImage
+export default BreedImage;
