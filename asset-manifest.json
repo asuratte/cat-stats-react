@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/cat-stats-react/static/css/main.305cc180.css",
-    "main.js": "/cat-stats-react/static/js/main.c535c96a.js",
+    "main.css": "/cat-stats-react/static/css/main.267b9bb3.css",
+    "main.js": "/cat-stats-react/static/js/main.f828f2a5.js",
     "static/js/787.920f88c3.chunk.js": "/cat-stats-react/static/js/787.920f88c3.chunk.js",
     "static/media/memphis-mini.png": "/cat-stats-react/static/media/memphis-mini.f0fc03f27adc92c6be82.png",
     "static/media/cat-stats-icon.svg": "/cat-stats-react/static/media/cat-stats-icon.8663f5f30a5721c69411e5a7ee5751a0.svg",
     "index.html": "/cat-stats-react/index.html",
-    "main.305cc180.css.map": "/cat-stats-react/static/css/main.305cc180.css.map",
-    "main.c535c96a.js.map": "/cat-stats-react/static/js/main.c535c96a.js.map",
+    "main.267b9bb3.css.map": "/cat-stats-react/static/css/main.267b9bb3.css.map",
+    "main.f828f2a5.js.map": "/cat-stats-react/static/js/main.f828f2a5.js.map",
     "787.920f88c3.chunk.js.map": "/cat-stats-react/static/js/787.920f88c3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.305cc180.css",
-    "static/js/main.c535c96a.js"
+    "static/css/main.267b9bb3.css",
+    "static/js/main.f828f2a5.js"
   ]
 }
